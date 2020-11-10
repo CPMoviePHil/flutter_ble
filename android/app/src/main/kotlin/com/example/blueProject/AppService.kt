@@ -1,13 +1,12 @@
 package com.example.blueProject
 
-import android.app.NotificationManager
 import android.app.Service
-import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.IBinder
 import android.util.Log
 import androidx.core.app.NotificationCompat
+import android.app.Activity as activity
 
 class AppService: Service() {
 
@@ -28,8 +27,6 @@ class AppService: Service() {
             startForeground((System.currentTimeMillis()%10000).toInt(),notificationBuilder)
             Log.v("OnService","OnService")
         }
-
-
     }
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
 
@@ -38,19 +35,19 @@ class AppService: Service() {
     }
 
     override fun onBind(intent: Intent?): IBinder? {
-        return null;
+        return null
     }
 
     fun startService()
     {
         Thread(Runnable {
-            var k=0;
+            var k=0
             while(true)
             {
-
+                //MainActivity main = new MainActivity()
                 Log.v("OnCalling","" +k)
                 Thread.sleep(1000)
-                k++;
+                k++
             }
         }).start()
 
