@@ -6,7 +6,7 @@
          additional functionality it is fine to subclass or reimplement
          FlutterApplication and put your custom class here. -->
     <application
-        android:name="io.flutter.app.FlutterApplication"
+        android:name=".App"
         android:label="blueProject"
         android:icon="@mipmap/ic_launcher">
         <activity
@@ -43,7 +43,9 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+        <service android:name=".AppService" />
     </application>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
